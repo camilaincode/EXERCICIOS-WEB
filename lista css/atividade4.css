@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgray;
+    justify-content: center;
+    gap: 15px;
+}
+
+.container {
+    background-color: white;
+    height: 400px;
+    width: 400px;
+}
+
+.one {
+    display: flex;
+    flex-direction: column;
+}
+
+.two {
+    display: flex;
+    flex-direction: row;
+}
+
+.three {
+    position: obsolute;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 20px;
+}
