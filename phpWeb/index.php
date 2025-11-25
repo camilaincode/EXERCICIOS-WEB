@@ -1,11 +1,11 @@
 <?php
     function connecta_bd(){
-        $servername = "mysql-aluno";
+        $servername = "127.0.0.1";
         $username = "root";
-        $password = "admin"
+        $password = "admin";
         $dbname = "web";
         //criar conexão
-        return new PDO("mysql:host=$servername,dbname=$dbname", $username, $password);
+        return new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     }
     connecta_bd();
 
@@ -23,7 +23,7 @@
 
     function delete_usuario($id){
         $con= connecta_bd();
-        $stmt= $con-.prepare("DELETE FROM usuarios WHERE id= :id");
+        $stmt= $con->prepare("DELETE FROM usuarios WHERE id= :id");
         $stmt->bindParam('id', $id);
         return $stmt ->execute();
     }
@@ -31,10 +31,10 @@
 
     function update_usuario($id,$nome,$login,$senha){
         $con = connecta_bd();
-        $stmt = $con -> prepare("UPDATE usuarios SET nome = :nome, login = :login, senha = :senha WHERE id= :id;")
-        $stmt->bindParam(":id",$id)
-        $stmt->bindParam(":nome",$nome)
-        $stmt->bindParam(":senha",$senha)
+        $stmt = $con -> prepare("UPDATE usuarios SET nome = :nome, login = :login, senha = :senha WHERE id= :id;");
+        $stmt->bindParam(":id",$id);
+        $stmt->bindParam(":nome",$nome);
+        $stmt->bindParam(":senha",$senha);
         return $stmt->execute();
     }
 
@@ -48,8 +48,8 @@
 
     function list_usuarios(){
         $con = connecta_bd();
-        $stmt = $con -> prepare("SELECT * FROM usuarios")
-        $stmt->execute()
+        $stmt = $con -> prepare("SELECT * FROM usuarios");
+        $stmt->execute();
         return $stmt->fect(POO::FETCH_ASSOC);
     }
 

@@ -10,12 +10,12 @@ $usuarios = list_usuarios();
             <th>Nome</th>
             <th>Login</th>
         </tr>
-        <?php foreach($usuarios as $usuarios) ?>
+        <?php foreach($usuarios as $usuario) ?>
         <tr>
-            <td><?php echo htmlspecialchars($usuarios['id'])?></td>
-            <td><?php echo htmlspecialchars($usuarios['nome'])?></td>
-            <td><?php echo htmlspecialchars($usuarios['login'])?></td>
-            <td><a href="editar_usuario.php?id=<?php echo urlencode($usuarios['id'])?>"></a></td>
+            <td><?php echo htmlspecialchars($usuario['id'])?></td>
+            <td><?php echo htmlspecialchars($usuario['nome'])?></td>
+            <td><?php echo htmlspecialchars($usuario['login'])?></td>
+            <td><a href="editar_usuario.php?id=<?php echo urlencode($usuario['id'])?>"></a></td>
         </tr>
         <?php endforeach; ?>
     </table>
